@@ -17,15 +17,15 @@ const variants = {
   reject: 'border border-red-700 bg-red-700 bg-opacity-10',
 };
 
-type InputProps = {
-  width?: number;
-  height?: number;
-  className?: string;
-  value?: File | string;
-  onChange?: (file?: File) => void | Promise<void>;
-  disabled?: boolean;
-  dropzoneOptions?: Omit<DropzoneOptions, 'disabled'>;
-};
+interface InputProps {
+  width?: number
+  height?: number
+  className?: string
+  value?: File | string
+  onChange?: (file?: File) => void | Promise<void>
+  disabled?: boolean
+  dropzoneOptions?: Omit<DropzoneOptions, 'disabled'>
+}
 
 const ERROR_MESSAGES = {
   fileTooLarge(maxSize: number) {
@@ -185,8 +185,8 @@ const SingleImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
 SingleImageDropzone.displayName = 'SingleImageDropzone';
 
 const Button = React.forwardRef<
-  HTMLButtonElement,
-  React.ButtonHTMLAttributes<HTMLButtonElement>
+HTMLButtonElement,
+React.ButtonHTMLAttributes<HTMLButtonElement>
 >(({ className, ...props }, ref) => {
   return (
     <button
